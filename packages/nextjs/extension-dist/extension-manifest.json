@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Scaffold Stark",
+  "version": "1.0.0",
+  "description": "Fast track your starknet journey",
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://*.starknet.io/*",
+    "https://alpha-mainnet.starknet.io/*",
+    "https://alpha-goerli.starknet.io/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  }
+}

@@ -1,3 +1,11 @@
+export async function generateStaticParams() {
+  // Define the static paths we want to pre-render
+  return [
+    { symbol: 'ETH' },
+    { symbol: 'STRK' }
+  ];
+}
+
 export async function GET(
   _: Request,
   { params: { symbol } }: { params: { symbol: string } },
