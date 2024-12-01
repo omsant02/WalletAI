@@ -3,6 +3,89 @@
  * You should not edit it manually or your changes might be overwritten.
  */
 
-const deployedContracts = {} as const;
+const deployedContracts = {
+  sepolia: {
+    WalletToken: {
+      address:
+        "0x120737c797d4e53825640e37b58df0e0813fe68eed80ff1dd918196510463a5",
+      abi: [
+        {
+          type: "impl",
+          name: "WalletTokenImpl",
+          interface_name: "contracts::WalletToken::IWalletToken",
+        },
+        {
+          type: "struct",
+          name: "core::integer::u256",
+          members: [
+            {
+              name: "low",
+              type: "core::integer::u128",
+            },
+            {
+              name: "high",
+              type: "core::integer::u128",
+            },
+          ],
+        },
+        {
+          type: "interface",
+          name: "contracts::WalletToken::IWalletToken",
+          items: [
+            {
+              type: "function",
+              name: "get_value",
+              inputs: [
+                {
+                  name: "address",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::integer::u256",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "update_values",
+              inputs: [
+                {
+                  name: "from",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "to",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "amount",
+                  type: "core::integer::u256",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+          ],
+        },
+        {
+          type: "constructor",
+          name: "constructor",
+          inputs: [],
+        },
+        {
+          type: "event",
+          name: "contracts::WalletToken::Event",
+          kind: "enum",
+          variants: [],
+        },
+      ],
+      classHash:
+        "0xa6ed4fe649e9f2ec8c3f11e03341f19ad4625f392d743e34be35386c72ecb3",
+    },
+  },
+} as const;
 
 export default deployedContracts;
