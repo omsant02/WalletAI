@@ -1,5 +1,6 @@
-mod YourContract;
+mod BasicWallet;  // Main contract module
+
 #[cfg(test)]
 mod test {
-    mod TestContract;
+    mod BasicWallet;  // Test module
 }

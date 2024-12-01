@@ -43,9 +43,9 @@ import { green } from "./helpers/colorize-log";
  */
 const deployScript = async (): Promise<void> => {
   await deployContract({
-    contract: "YourContract",
+    contract: "BasicWallet",
     constructorArgs: {
-      owner: deployer.address,
+      public_key: "0x4e1f1190e63461bc1d176547ded915c43c35220d6f6f3969314ebdee6ed60fd",
     },
   });
 };
